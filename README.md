@@ -45,3 +45,7 @@ There are two flags you can pass to `send_random_heartbeat` and `send_custom_hea
 Running `make run` will recompile the source files and execute the program.
 
 You will be able to see any "bled" bytes of memory on the command line output.
+
+## License
+
+The contents of this repository is released under the X11/MIT license.
