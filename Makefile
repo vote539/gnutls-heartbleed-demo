@@ -1,7 +1,4 @@
-# CC = g++
-# CFLAGS = -g -Wall -DHAVE_CONFIG_H -I../gnutls/doc/examples -I../gnutls -I../gnutls/lib/includes -I../gnutls/extra/includes -I../gnutls/gl -D_GL_NO_LARGE_FILES -DNO_LIBCURL
 TARGET = demo
-# LIBS = ../gnutls/lib/libgnutlsxx.la ../gnutls/doc/examples/libexamples.la ../gnutls/lib/libgnutls.la ../gnutls/gl/libgnu.la
 GNUTLS_DIR = ../gnutls
 
 all: $(TARGET)-c
