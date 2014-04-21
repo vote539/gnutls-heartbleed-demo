@@ -1,8 +1,9 @@
+// See license in demo.c
+
 #include <stdio.h>
 #include <gnutls/gnutls.h>
 #include "heartbleed-util.c"
 
-//GNUTLS_HEARTBEAT_BLEED_SMALL
 void session_live_callback(gnutls_session_t session){
 	// Default Ping
 	send_random_heartbeat(session, 0);
