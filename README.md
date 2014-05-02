@@ -28,13 +28,15 @@ Second, clone this repository.
 
 In the Makefile, change `GNUTLS_DIR = ../gnutls` to point to the path to the root directory of gnutls, which you cloned above.
 
-Finally, executing `make run` in this repository should build and run the demonstration.
+Finally, executing `make run` in this repository should build and run the demonstration
 
 ## Customization
 
-Change the hostname on lines 42-43 of *demo.c*.  You need to specify *both* the hostname *and* the associated IP address.
+By default, this demonstration will hit the server at "www.cloudflarechallenge.com", which seems to be the default server people are using for testing Heartbleed.  If you want to test a custom server, pass arguments to `make run` like this:
 
-The example EC2 instance is vulnerable to Heartbleed.  The site at `acm.wustl.edu` is not vulnerable to Heartbleed.
+    make run host=example.com ip=10.20.30.40
+
+Go into `heartbleed.c` to change the number of heartbeats being sent to the server and the content of those heartbeats.
 
 ## Notes
 
