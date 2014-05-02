@@ -10,5 +10,9 @@ void session_live_callback(gnutls_session_t session){
 
 	// Custom Ping
 	char hello[11] = "hello world";
-	send_custom_heartbeat(session, hello, 11, GNUTLS_HEARTBEAT_BLEED_SMALL);
+	send_custom_heartbeat(session, hello, 0);
+
+	// Bleeding Ping
+	char arrows[6] = ">>>>>>";
+	send_custom_heartbeat(session, arrows, GNUTLS_HEARTBEAT_BLEED_LARGE);
 }

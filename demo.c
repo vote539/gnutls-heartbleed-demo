@@ -53,16 +53,15 @@ int _check_and_print_x509_certificate(
 	unsigned int* status);
 static void tls_log_func(int level, const char* message);
 
-int main(void)
+int main(int argc, const char* argv[])
 {
 	int ret, sd;
 	gnutls_session_t session;
 	const char *err;
 	gnutls_certificate_credentials_t xcred;
-	const char* HOSTNAME = "domU-12-31-39-13-C1-26.compute-1.internal";
-	const char* HOSTIP = "54.82.141.66";
-	//const char* HOSTNAME = "acm.wustl.edu";
-	//const char* HOSTIP = "128.252.20.101";
+	int useargs = argv[1] && argv[2];
+	const char* HOSTNAME = useargs ? argv[1] : "www.cloudflarechallenge.com";
+	const char* HOSTIP = useargs ? argv[2] : "107.170.194.215";
 
 	gnutls_global_init();
 
